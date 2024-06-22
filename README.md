@@ -21,7 +21,7 @@ Antes de subir tudo, vamos testar em local mesmo. Certifique-se que todos os req
 **(Certifique-se que esteja no diretório correto -> app/)**
 
 ```bash
-sudo apt install -y composer php
+apt install -y composer php
 composer run fernando:install
 composer install
 ```
@@ -50,7 +50,7 @@ Se já estiver na **8.3** ou superior continuemos, caso contrário, procure como
 Execute o comando:
 
 ```bash
-sudo composer run fernando:configure
+composer run fernando:configure
 ```
 
 Ele irá configurar o banco de dados pra você.
