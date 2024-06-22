@@ -1,0 +1,37 @@
+{
+    "name": "fernandothedev/bot-carder",
+    "description": "Bot de vendas sem checagem.",
+    "type": "project",
+    "require": {
+        "badfarm/zanzara": "^0.9.1",
+        "php-amqplib/php-amqplib": "^3.6",
+        "nyholm/psr7": "^1.8",
+        "vlucas/phpdotenv": "^5.6",
+        "ramsey/uuid": "^4.7",
+        "pimple/pimple": "^3.5",
+        "nutgram/nutgram": "^4.22"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Fernando\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Fernando",
+            "email": "fernandolovephp@gmail.com"
+        }
+    ],
+    "scripts": {
+        "fernando:bot": "php bin/bootstrap.php",
+        "fernando:configure": "sh bin/configure",
+        "fernando:install": "sh bin/packages"
+    },
+    "minimum-stability": "stable",
+    "config": {
+        "allow-plugins": {
+            "php-http/discovery": true
+        }
+    }
+}

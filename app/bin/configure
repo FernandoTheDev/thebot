@@ -1,0 +1,3 @@
+#!/bin/sh
+
+sudo sqlite3 ./database/database.db < ./sql/database.sqlite

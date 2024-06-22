@@ -1,0 +1,66 @@
+-- Active: 1718754000869@@127.0.0.1@3306
+-- for ../database/database.db --
+CREATE TABLE IF NOT EXISTS users (
+    uuid TEXT PRIMARY KEY NOT NULL,
+    user_id BIGINT NOT NULL,
+    balance BIGINT NOT NULL DEFAULT 0,
+    register_at TEXT NOT NULL,
+    microtime BIGINT NOT NULL,
+    admin BOOLEAN DEFAULT false
+);
+CREATE TABLE IF NOT EXISTS payments (
+    uuid TEXT PRIMARY KEY NOT NULL,
+    user_id BIGINT NOT NULL,
+    value BIGINT NOT NULL,
+    status TEXT NOT NULL, -- approved, pending, cancelled or refound
+    datetime TEXT NOT NULL
+);
+CREATE TABLE IF NOT EXISTS levels (
+    level TEXT PRIMARY KEY NOT NULL,
+    value BIGINT NOT NULL
+);
+CREATE TABLE IF NOT EXISTS cards (
+    uuid TEXT PRIMARY KEY NOT NULL,
+    bin INTEGER NOT NULL,
+    card BIGINT NOT NULL,
+    month INTEGER NOT NULL,
+    year INTEGER NOT NULL,
+    cvv INTEGER NOT NULL,
+    -- Informações mais especificas
+    bank TEXT NOT NULL DEFAULT "N/A",
+    level TEXT NOT NULL DEFAULT "INDEFINIDO",
+    country TEXT NOT NULL DEFAULT "N/A",
+    flag TEXT NOT NULL,
+    type TEXT NOT NULL
+);
+CREATE TABLE IF NOT EXISTS purchasesPending (
+    uuid TEXT PRIMARY KEY NOT NULL,
+    card_uuid TEXT NOT NULL,
+    level TEXT NOT NULL DEFAULT "INDEFINIDO",
+    status BOOLEAN DEFAULT true
+);
+CREATE TABLE IF NOT EXISTS historyShopping (
+    uuid TEXT PRIMARY KEY NOT NULL,
+    list TEXT NOT NULL,
+    user_uuid TEXT NOT NULL,
+    value BIGINT NOT NULL,
+    type TEXT NOT NULL -- unity or mix
+);
+CREATE TABLE IF NOT EXISTS historyPayments (
+    uuid TEXT PRIMARY KEY NOT NULL,
+    payment_id TEXT NOT NULL,
+    user_uuid TEXT NOT NULL,
+    value BIGINT NOT NULL,
+    status TEXT NOT NULL -- approved or refound or cancelled
+);
+CREATE TABLE IF NOT EXISTS gifts (
+    uuid TEXT PRIMARY KEY NOT NULL,
+    value BIGINT NOT NULL,
+    status BOOLEAN DEFAULT TRUE,
+    redeemedByUuid TEXT NOT NULL DEFAULT "",
+    redeemedAt TEXT NOT NULL DEFAULT "",
+    createByUuid TEXT NOT NULL
+);
+
+select * FROM users;
+drop table gifts;
