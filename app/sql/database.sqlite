@@ -61,6 +61,3 @@ CREATE TABLE IF NOT EXISTS gifts (
     redeemedAt TEXT NOT NULL DEFAULT "",
     createByUuid TEXT NOT NULL
 );
-
-select * FROM users;
-drop table gifts;
