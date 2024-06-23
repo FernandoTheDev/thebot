@@ -9,7 +9,7 @@ Uma opção é rodar um subsitema **Ubuntu** no Windows diretamente.
 
 ## Aviso
 
-Versão alpha, não espere fazer vendas ou quaisquer outro tipo de coisa nessa versão. **0.0.0-a**
+Versão alpha, não espere fazer vendas ou qualquer outro tipo de coisa nessa versão. **0.0.0-a**
 
 ### Requesitos
 
